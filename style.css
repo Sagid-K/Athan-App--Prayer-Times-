@@ -1,0 +1,107 @@
+/* Reset default browser styles */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Naskh Arabic', sans-serif;
+}
+
+/* Set an Islamic-style background pattern */
+body {
+  background-color: #f0f6f9;
+  background-image: url('path/to/islamic-background-pattern.jpg');
+  background-repeat: repeat;
+}
+
+/* Apply an Islamic-style color palette */
+h1, h2, h3, p {
+  color: #2c3e50;
+}
+
+/* Create a container with padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style navigation menu */
+.navbar {
+  background-color: #1f2d3f;
+  color: #fff;
+  padding: 10px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Style hero section with subtle animation */
+.hero {
+  background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pxfuel.com%2Fen%2Fquery%3Fq%3Dislamic%2Bfor%2Bbackground&psig=AOvVaw2AQeahR61QNll61ELgBjLw&ust=1691538528438000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCIjN5Zrey4ADFQAAAAAdAAAAABAE');
+  background-size: cover;
+  text-align: center;
+  padding: 100px 0;
+  color: #fff;
+  transition: padding 0.3s ease-in-out;
+}
+
+/* Style prayer times section */
+.prayer-times {
+  text-align: center;
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prayer-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.prayer {
+  flex-basis: calc(25% - 20px);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Add hover effect for .prayer elements */
+.prayer:hover {
+  transform: translateY(-5px);
+}
+
+/* Style footer with animation */
+.footer {
+  background-color: #1f2d3f;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add hover effect for .footer */
+.footer:hover {
+  opacity: 1;
+}
+
+/* Apply responsive design */
+@media (max-width: 768px) {
+  .prayer {
+      flex-basis: calc(50% - 20px);
+  }
+  
+  .hero {
+      padding: 50px 0;
+  }
+}

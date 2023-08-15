@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <h1 class="logo">Prayer Times App</h1>
+        </nav>
+      </header>
+      
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Muslim Prayer Times</h1>
+            <p>Stay connected with your daily prayers.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section class="prayer-times">
+        <div class="container">
+          <h2>Today's Prayer Times</h2>
+          <div class="prayer-list">
+            <div class="prayer">
+              <h3>Fajr</h3>
+              <p class="time" id="Fajr-time">05:00 AM</p>
+            </div>
+            <div class="prayer">
+              <h3>Sunrise</h3>
+              <p class="time" id="Sunrise-time">06:30 AM</p>
+            </div>
+            <div class="prayer">
+              <h3>Dhuhr</h3>
+              <p class="time" id="Dhuhr-time">12:30 PM</p>
+            </div>
+            <div class="prayer">
+              <h3>Asr</h3>
+              <p class="time" id="Asr-time">04:45 PM</p>
+            </div>
+            <div class="prayer">
+              <h3>Maghrib</h3>
+              <p class="time" id="Maghrib-time">07:15 PM</p>
+            </div>
+            <div class="prayer">
+              <h3>Isha</h3>
+              <p class="time" id="Isha-time">09:30 PM</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2023 Prayer Times App. All rights reserved.</p>
+        </div>
+      </footer>
+</body>
+<script src="./node_modules/axios/dist/axios.min.js"></script>
+<script>
+    let params = {
+        counrty: "US",
+        city: "Euless"
+    }
+    axios.get('http://api.aladhan.com/v1/timingsByCity?city=Euless&country=Unitedstaets&method=2', {
+    params : params
+  })
+  .then(function (response) {
+    const timings = response.data.data.timings;
+    fillTimeforPrayer("Fajr-time", timings.Fajr);
+    fillTimeforPrayer("Sunrise-time", timings.Sunrise);
+    fillTimeforPrayer("Dhuhr-time", timings.Dhuhr);
+    fillTimeforPrayer("Asr-time", timings.Asr);
+    fillTimeforPrayer("Maghrib-time", timings.Maghrib);
+    fillTimeforPrayer("Isha-time", timings.Isha);
+    // document.getElementById("Fajr-time").innerHTML = timings.Fajr + " AM";
+    console.log(response.data.data.timings.Fajr);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+   function fillTimeforPrayer (id, time) {
+    document.getElementById(id).innerHTML = time;
+   }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/hijri-date@1.0.0/dist/hijri-date.min.js"></script>
+    <script>
+        document.getElementById('hijriDate').textContent = new HijriDate().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    </script>
+    
+</html>
