@@ -5,7 +5,7 @@ This web app displays live Muslim prayer times for a specific city using the AlA
 ## Features
 
 - Allows users to enter a city name to retrieve live Muslim prayer times.
-- Displays Fajr, Suruq, Dhuhr, Asr, Maghrib, and Isha prayer times for the entered city.
+- Displays Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha prayer times for the entered city.
 - Provides a user-friendly interface for easy interaction.
 
 ## Prerequisites
@@ -26,7 +26,7 @@ Before you begin, ensure you have met the following requirements:
 1. Open the web app in your browser.
 2. The default city is set to "Euless, TX."
 3. Click the "Get Prayer Times" button to retrieve and display the prayer times for the specified city.
-4. Prayer times for Fajr, Shoruq, Dhuhr, Asr, Maghrib, and Isha will be displayed.
+4. Prayer times for Fajr, Sunrise, Dhuhr, Asr, Maghrib, and Isha will be displayed.
 
 ## Configuration
 
